@@ -1037,12 +1037,63 @@
 
 // PROMISES - used to handle asyn functions in JS
 // suppose promise like an empty object with some data hold the value of the fun
-const cart = ["shoes", "phones", "laptop"];
+// const cart = ["shoes", "phones", "laptop"];
 
-const GITHUB_API = "  https://api.github.com/users/Mansiprajapatii";
+// const GITHUB_API = "  https://api.github.com/users/Mansiprajapatii";
 
-const user = fetch(GITHUB_API);
+// const user = fetch(GITHUB_API);
 
-user.then(function (data) {
-  console.log(data);
+// user.then(function (data) {
+//   console.log(data);
+// });
+
+// PROMISE API
+
+// 1. Promise.all -  it take the array of promises as input and return array of output and if there is failure in any of the promise it will immediately through the error of that promise
+
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve("p1 successful"), 3000);
 });
+
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => reject("p2 Successful"), 1000);
+});
+
+const p3 = new Promise((resolve, reject) => {
+  setTimeout(() => reject("p3 Successful"), 2000);
+});
+
+// Promise.all([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// 2. Promise.allSettled = it take array of promises and return the value of al the promises even if there is any failure promise
+// Promise.allSettled([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// 3. Promise.race =  it will also take the array of promises and return the output of the first settled promise , it will not wait for other promises to gr=et finished in both the case
+// Promise.race([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// 4. Promise.any =  similar to race but it will wait for the 1st successful promise and return the value of the success promise
+// Promise.any([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
