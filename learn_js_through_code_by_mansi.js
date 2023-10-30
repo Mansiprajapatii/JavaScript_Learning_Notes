@@ -1090,11 +1090,13 @@ const p3 = new Promise((resolve, reject) => {
 //   });
 
 // 4. Promise.any =  similar to race but it will wait for the 1st successful promise and return the value of the success promise
-Promise.any([p1, p2, p3])
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.error(err);
-    console.log(err.errors);
-  });
+// Promise.any([p1, p2, p3])
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//     console.log(err.errors);
+//   });
+
+//  event
