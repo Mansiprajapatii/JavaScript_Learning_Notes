@@ -1099,4 +1099,4 @@ const p3 = new Promise((resolve, reject) => {
 //     console.log(err.errors);
 //   });
 
-//  event
+//  event listners in js
